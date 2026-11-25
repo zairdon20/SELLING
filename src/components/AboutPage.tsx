@@ -15,7 +15,7 @@ import {
   Instagram,
   Facebook,
   Twitter,
-  Shirt,
+  Smartphone,
   Globe,
   Shield
 } from "lucide-react";
@@ -27,22 +27,22 @@ export default function AboutPage() {
     {
       icon: Heart,
       title: "Quality First",
-      description: "We source only the finest materials to ensure every piece meets our high standards."
+      description: "We source only genuine, factory-sealed devices so every gadget meets our high standards."
     },
     {
       icon: Users,
-      title: "Family Focused",
-      description: "Fashion for the whole family - men, women, and children in one convenient place."
+      title: "Everyone Welcome",
+      description: "Phones, tablets and computers for everyone — students, professionals, creators and families."
     },
     {
       icon: Award,
-      title: "Affordable Luxury",
-      description: "Premium style without the premium price tag. Everyone deserves to look their best."
+      title: "Fair Pricing",
+      description: "Latest tech at honest Kwacha prices. Premium gadgets shouldn't cost a premium to reach you."
     },
     {
       icon: Globe,
-      title: "Sustainable Fashion",
-      description: "Committed to ethical sourcing and sustainable practices in everything we do."
+      title: "Nationwide Delivery",
+      description: "Reliable delivery across Zambia, with genuine warranties and after-sales support you can trust."
     }
   ];
 
@@ -76,14 +76,14 @@ export default function AboutPage() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 About{" "}
                 <span className="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-500 bg-clip-text text-transparent">
-                  Nyembo Designs
+                  TwendaChina
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                We believe fashion is a form of self-expression. Since our founding, 
-                Nyembo Designs has been dedicated to bringing quality, style, and affordability 
-                to families everywhere. Our curated collections for men, women, and children 
-                are designed to help you express your unique personality.
+                We believe great technology should be within everyone's reach. Since our founding,
+                TwendaChina has been dedicated to bringing genuine phones, tablets and computers
+                to homes across Zambia. Our curated gadgets are chosen to keep you connected,
+                productive and entertained.
               </p>
             </div>
           </div>
@@ -134,22 +134,22 @@ export default function AboutPage() {
               <div>
                 <Badge variant="outline" className="mb-4">Our Journey</Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  From a Dream to Your Wardrobe
+                  From a Spark to Your Doorstep
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Nyembo Designs started with a simple idea: quality fashion should be accessible 
-                    to everyone. We noticed that families had to shop at multiple stores 
-                    to find clothing for everyone, and we knew there was a better way.
+                    TwendaChina started with a simple idea: the latest technology should be
+                    accessible to everyone in Zambia. We noticed people struggled to find genuine
+                    phones, tablets and computers from brands they trust, and we knew there was a better way.
                   </p>
                   <p>
-                    Today, we offer carefully curated collections for men, women, and children, 
-                    all in one place. Each piece is selected with care, ensuring it meets our 
-                    standards for quality, style, and value.
+                    Today, we offer carefully curated phones, tablets and computers, all in one
+                    place. Each device is selected with care, ensuring it meets our standards for
+                    authenticity, performance, and value.
                   </p>
                   <p>
-                    We're not just selling clothes – we're helping families express themselves 
-                    and feel confident in what they wear. That's the Nyembo Designs difference.
+                    We're not just selling gadgets — we're helping you stay connected, work
+                    smarter and enjoy the tech you love. That's the TwendaChina difference.
                   </p>
                 </div>
                 <Button className="mt-6 bg-green-600 hover:bg-green-700" asChild>
@@ -164,7 +164,7 @@ export default function AboutPage() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-32 h-32 rounded-full bg-white/80 flex items-center justify-center mx-auto mb-4 shadow-xl">
-                        <Shirt className="h-16 w-16 text-neutral-700" />
+                        <Smartphone className="h-16 w-16 text-neutral-700" />
                       </div>
                       <p className="text-neutral-600 font-medium">Est. 2024</p>
                     </div>
@@ -183,73 +183,73 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-4">Shop By Category</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold">Fashion for Everyone</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Tech for Everyone</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Men Card */}
+              {/* Phones Card */}
               <Card className="group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300">
                 <div className="aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src="/images/men-1.jpg"
-                    alt="Men's collection"
+                    src="/images/electronics/phone-1.jpg"
+                    alt="Phones collection"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <Button variant="secondary" asChild>
-                      <a href="/men">Shop Men</a>
+                      <a href="/phones">Shop Phones</a>
                     </Button>
                   </div>
                 </div>
                 <CardContent className="p-4">
-                  <h3 className="font-semibold text-lg">Men's Collection</h3>
-                  <p className="text-sm text-muted-foreground">Professional, casual, and everything in between</p>
+                  <h3 className="font-semibold text-lg">Phones</h3>
+                  <p className="text-sm text-muted-foreground">Flagship smartphones from Apple, Samsung & Google</p>
                 </CardContent>
               </Card>
 
-              {/* Women Card */}
+              {/* Tablets Card */}
               <Card className="group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300">
                 <div className="aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src="/images/woman-1.jpg"
-                    alt="Women's collection"
+                    src="/images/electronics/tablet-1.jpg"
+                    alt="Tablets collection"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <Button variant="secondary" asChild>
-                      <a href="/women">Shop Women</a>
+                      <a href="/tablets">Shop Tablets</a>
                     </Button>
                   </div>
                 </div>
                 <CardContent className="p-4">
-                  <h3 className="font-semibold text-lg">Women's Collection</h3>
-                  <p className="text-sm text-muted-foreground">Elegant styles for every occasion</p>
+                  <h3 className="font-semibold text-lg">Tablets</h3>
+                  <p className="text-sm text-muted-foreground">iPads and Android tablets for work and play</p>
                 </CardContent>
               </Card>
 
-              {/* Children Card */}
+              {/* Computers Card */}
               <Card className="group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300">
                 <div className="aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src="/images/kids-1.jpg"
-                    alt="Children's collection"
+                    src="/images/electronics/computer-1.jpg"
+                    alt="Computers collection"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <Button variant="secondary" asChild>
-                      <a href="/children">Shop Children</a>
+                      <a href="/computers">Shop Computers</a>
                     </Button>
                   </div>
                 </div>
                 <CardContent className="p-4">
-                  <h3 className="font-semibold text-lg">Children's Collection</h3>
-                  <p className="text-sm text-muted-foreground">Fun and comfortable for little ones</p>
+                  <h3 className="font-semibold text-lg">Computers</h3>
+                  <p className="text-sm text-muted-foreground">MacBooks, ultrabooks and gaming laptops</p>
                 </CardContent>
               </Card>
             </div>
@@ -266,7 +266,7 @@ export default function AboutPage() {
               We'd Love to Hear From You
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto mb-8">
-              Have questions about our products or need styling advice? 
+              Have questions about a device or need buying advice?
               Our team is here to help. Reach out to us anytime!
             </p>
             <div className="flex flex-wrap justify-center gap-4">

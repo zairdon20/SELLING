@@ -180,9 +180,9 @@ function LoginPageInner() {
         href="/"
         className="flex items-center gap-2 mb-8 group"
       >
-        <Image src="/logo.png" alt="Nyembo Designs" width={44} height={44} className="rounded-full" />
+        <Image src="/logo.png" alt="TwendaChina" width={44} height={44} className="rounded-full" />
         <span className="text-2xl font-bold tracking-tight text-neutral-900">
-          Nyembo Designs
+          TwendaChina
         </span>
       </Link>
 

@@ -17,7 +17,7 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 import type { Product } from "@/types/product";
-import { formatUsd } from "@/lib/currency";
+import { formatZmw } from "@/lib/currency";
 
 interface SummaryCounters {
   requestsPending: number;
@@ -200,7 +200,7 @@ export default function AdminDashboardPage() {
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold text-green-700">
-                {formatUsd(counters.ordersRevenue)}
+                {formatZmw(counters.ordersRevenue)}
               </p>
               <p className="text-xs text-muted-foreground">All time</p>
             </CardContent>

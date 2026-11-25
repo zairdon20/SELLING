@@ -12,61 +12,61 @@ interface CategorySectionProps {
   subtitle: string;
   products: Product[];
   whatsappNumber: string;
-  variant: "men" | "women" | "children";
+  variant: "phones" | "tablets" | "computers";
 }
 
 const categoryStyles = {
-  men: {
-    gradient: "from-slate-900 via-slate-800 to-slate-700",
-    accent: "text-slate-900",
-    bg: "bg-slate-50",
-    border: "border-slate-200",
-    highlight: "bg-slate-900",
-    pattern: "from-slate-100/50 to-transparent",
-    hoverBg: "hover:bg-slate-900",
-    heroImage: "/images/men-1.jpg",
-    heroOverlay: "from-slate-900/80 via-slate-900/50 to-transparent",
+  phones: {
+    gradient: "from-blue-700 via-blue-600 to-indigo-600",
+    accent: "text-blue-700",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
+    highlight: "bg-blue-600",
+    pattern: "from-blue-100/50 to-transparent",
+    hoverBg: "hover:bg-blue-600",
+    heroImage: "/images/electronics/phone-1.jpg",
+    heroOverlay: "from-blue-900/80 via-blue-900/50 to-transparent",
     badgeBg: "bg-white/10 border-white/30",
     badgeText: "text-white",
     titleText: "text-white",
-    subtitleText: "text-slate-200",
+    subtitleText: "text-blue-100",
   },
-  women: {
-    gradient: "from-rose-400 via-pink-400 to-rose-300",
-    accent: "text-rose-600",
-    bg: "bg-rose-50/30",
-    border: "border-rose-100",
-    highlight: "bg-rose-500",
-    pattern: "from-rose-100/50 to-transparent",
-    hoverBg: "hover:bg-rose-500",
-    heroImage: "/images/woman-1.jpg",
-    heroOverlay: "from-rose-900/70 via-rose-800/40 to-transparent",
+  tablets: {
+    gradient: "from-violet-600 via-purple-600 to-fuchsia-600",
+    accent: "text-violet-700",
+    bg: "bg-violet-50",
+    border: "border-violet-200",
+    highlight: "bg-violet-600",
+    pattern: "from-violet-100/50 to-transparent",
+    hoverBg: "hover:bg-violet-600",
+    heroImage: "/images/electronics/tablet-1.jpg",
+    heroOverlay: "from-violet-900/70 via-violet-800/40 to-transparent",
     badgeBg: "bg-white/10 border-white/30",
     badgeText: "text-white",
     titleText: "text-white",
-    subtitleText: "text-rose-100",
+    subtitleText: "text-violet-100",
   },
-  children: {
-    gradient: "from-teal-500 via-cyan-400 to-teal-400",
-    accent: "text-teal-600",
-    bg: "bg-teal-50/30",
-    border: "border-teal-100",
-    highlight: "bg-teal-500",
-    pattern: "from-teal-100/50 to-transparent",
-    hoverBg: "hover:bg-teal-500",
-    heroImage: "/images/kids-1.jpg",
-    heroOverlay: "from-teal-900/70 via-teal-800/40 to-transparent",
+  computers: {
+    gradient: "from-emerald-600 via-teal-600 to-cyan-600",
+    accent: "text-emerald-700",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
+    highlight: "bg-emerald-600",
+    pattern: "from-emerald-100/50 to-transparent",
+    hoverBg: "hover:bg-emerald-600",
+    heroImage: "/images/electronics/computer-1.jpg",
+    heroOverlay: "from-emerald-900/70 via-teal-800/40 to-transparent",
     badgeBg: "bg-white/10 border-white/30",
     badgeText: "text-white",
     titleText: "text-white",
-    subtitleText: "text-teal-100",
+    subtitleText: "text-emerald-100",
   },
 };
 
 const categoryLinks = {
-  men: "/men",
-  women: "/women",
-  children: "/children",
+  phones: "/phones",
+  tablets: "/tablets",
+  computers: "/computers",
 };
 
 export function CategorySection({
@@ -144,7 +144,7 @@ export function CategorySection({
           <div className="text-center py-16">
             <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full ${styles.bg} ${styles.border} border mb-4`}>
               <span className="text-4xl">
-                {variant === "men" ? "👔" : variant === "women" ? "👗" : "🧒"}
+                {variant === "phones" ? "📱" : variant === "tablets" ? "💻" : "🖥️"}
               </span>
             </div>
             <p className="text-muted-foreground">

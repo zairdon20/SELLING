@@ -17,9 +17,9 @@ export function Footer({ whatsappNumber }: FooterProps) {
 
   const quickLinks = [
     { label: "Home", href: "/" },
-    { label: "Men", href: "/men" },
-    { label: "Women", href: "/women" },
-    { label: "Children", href: "/children" },
+    { label: "Phones", href: "/phones" },
+    { label: "Tablets", href: "/tablets" },
+    { label: "Computers", href: "/computers" },
     { label: "About", href: "/about" },
   ];
 
@@ -30,12 +30,12 @@ export function Footer({ whatsappNumber }: FooterProps) {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image src="/logo.png" alt="Nyembo Designs" width={40} height={40} className="rounded-full" />
-              <span className="text-xl font-bold tracking-tight">Nyembo Designs</span>
+              <Image src="/logo.png" alt="TwendaChina" width={40} height={40} className="rounded-full" />
+              <span className="text-xl font-bold tracking-tight">TwendaChina</span>
             </Link>
             <p className="text-neutral-400 max-w-md">
-              Your destination for quality fashion. Discover stylish clothing for men, women, 
-              and children. Express yourself with Nyembo Designs.
+              Your destination for quality electronics in Zambia. Discover the latest phones,
+              tablets and computers from the brands you trust. Shop TwendaChina.
             </p>
             <div className="flex gap-3 mt-4">
               <Button
@@ -121,8 +121,8 @@ export function Footer({ whatsappNumber }: FooterProps) {
         <Separator className="my-8 bg-neutral-800" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
-          <p>&copy; {currentYear} Nyembo Designs. All rights reserved.</p>
-          <p>Quality fashion for everyone</p>
+          <p>&copy; {currentYear} TwendaChina. All rights reserved.</p>
+          <p>Quality electronics for everyone</p>
         </div>
       </div>
     </footer>

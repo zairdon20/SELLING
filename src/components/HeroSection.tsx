@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, Star } from "lucide-react";
 import type { Product } from "@/types/product";
-import { formatUsd } from "@/lib/currency";
+import { formatZmw } from "@/lib/currency";
 
 interface HeroSectionProps {
   product: Product | null;
@@ -15,7 +15,7 @@ interface HeroSectionProps {
 export function HeroSection({ product, whatsappNumber }: HeroSectionProps) {
   const whatsappMessage = product
     ? encodeURIComponent(
-        `Hi! I'm interested in the ${product.name} (${product.category}) - ${formatUsd(product.price)}. Can you provide more details?`
+        `Hi! I'm interested in the ${product.name} (${product.category}) - ${formatZmw(product.price)}. Can you provide more details?`
       )
     : encodeURIComponent("Hi! I'm interested in your products.");
 
@@ -36,18 +36,18 @@ export function HeroSection({ product, whatsappNumber }: HeroSectionProps) {
           <div className="flex flex-col gap-6 text-center lg:text-left">
             <Badge variant="outline" className="w-fit mx-auto lg:mx-0 bg-white/50 backdrop-blur">
               <Star className="mr-1 h-3 w-3 fill-amber-400 text-amber-400" />
-              Featured Collection
+              Featured Gadget
             </Badge>
-            
+
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Where Style Meets{" "}
-              <span className="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-500 bg-clip-text text-transparent">
-                Expression
+              Tech That Moves{" "}
+              <span className="bg-gradient-to-r from-blue-700 via-violet-600 to-emerald-600 bg-clip-text text-transparent">
+                With You
               </span>
             </h1>
-            
+
             <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-              Discover fashion that speaks to your unique personality. Quality clothing for men, women, and children — all in one place.
+              Shop the latest phones, tablets and computers in Zambia. Genuine gadgets from Apple, Samsung, Google and more — delivered to your door and paid securely in Kwacha.
             </p>
 
             {product && (
@@ -57,7 +57,7 @@ export function HeroSection({ product, whatsappNumber }: HeroSectionProps) {
                 </Badge>
                 {product.sizes.length > 0 && (
                   <Badge variant="outline" className="text-sm py-1.5">
-                    Sizes: {product.sizes.join(", ")}
+                    Storage: {product.sizes.join(", ")}
                   </Badge>
                 )}
                 {product.colors.length > 0 && (
@@ -80,14 +80,14 @@ export function HeroSection({ product, whatsappNumber }: HeroSectionProps) {
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="#men">Explore Collection</a>
+                <a href="#phones">Explore Collection</a>
               </Button>
             </div>
 
             {product && (
               <div className="mt-6 p-4 rounded-xl bg-white/60 backdrop-blur border max-w-md mx-auto lg:mx-0">
                 <p className="text-sm text-muted-foreground">Featured: {product.name}</p>
-                <p className="text-2xl font-bold text-foreground">{formatUsd(product.price)}</p>
+                <p className="text-2xl font-bold text-foreground">{formatZmw(product.price)}</p>
               </div>
             )}
           </div>
@@ -96,8 +96,8 @@ export function HeroSection({ product, whatsappNumber }: HeroSectionProps) {
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-200 to-neutral-300 shadow-2xl">
               <Image
-                src={product?.imageUrl || "/images/woman-hero.jpg"}
-                alt={product?.name || "Nyembo Designs Fashion"}
+                src={product?.imageUrl || "/images/electronics/hero-1.jpg"}
+                alt={product?.name || "TwendaChina Electronics"}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -112,7 +112,7 @@ export function HeroSection({ product, whatsappNumber }: HeroSectionProps) {
                       <p className="font-semibold text-foreground truncate">{product.name}</p>
                       <p className="text-sm text-muted-foreground line-clamp-1">{product.description}</p>
                     </div>
-                    <p className="text-lg sm:text-xl font-bold whitespace-nowrap shrink-0">{formatUsd(product.price)}</p>
+                    <p className="text-lg sm:text-xl font-bold whitespace-nowrap shrink-0">{formatZmw(product.price)}</p>
                   </div>
                 </div>
               )}

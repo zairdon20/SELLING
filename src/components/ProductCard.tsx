@@ -7,49 +7,50 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Heart, Eye } from "lucide-react";
 import type { Product } from "@/types/product";
-import { formatUsd } from "@/lib/currency";
+import { formatZmw } from "@/lib/currency";
+import { AddToCartDialog } from "./AddToCartDialog";
 
 interface ProductCardProps {
   product: Product;
   whatsappNumber: string;
-  variant?: "men" | "women" | "children";
+  variant?: "phones" | "tablets" | "computers";
 }
 
 const categoryColors = {
-  men: {
-    bg: "bg-slate-900",
-    text: "text-slate-900",
-    border: "border-slate-200",
-    badge: "bg-slate-900 text-white",
-    hover: "hover:border-slate-400",
-    accent: "bg-slate-100",
+  phones: {
+    bg: "bg-blue-600",
+    text: "text-blue-700",
+    border: "border-blue-200",
+    badge: "bg-blue-100 text-blue-700",
+    hover: "hover:border-blue-400",
+    accent: "bg-blue-50",
   },
-  women: {
-    bg: "bg-rose-400",
-    text: "text-rose-600",
-    border: "border-rose-100",
-    badge: "bg-rose-100 text-rose-700",
-    hover: "hover:border-rose-300",
-    accent: "bg-rose-50",
+  tablets: {
+    bg: "bg-violet-600",
+    text: "text-violet-700",
+    border: "border-violet-200",
+    badge: "bg-violet-100 text-violet-700",
+    hover: "hover:border-violet-400",
+    accent: "bg-violet-50",
   },
-  children: {
-    bg: "bg-teal-500",
-    text: "text-teal-600",
-    border: "border-teal-100",
-    badge: "bg-teal-100 text-teal-700",
-    hover: "hover:border-teal-300",
-    accent: "bg-teal-50",
+  computers: {
+    bg: "bg-emerald-600",
+    text: "text-emerald-700",
+    border: "border-emerald-200",
+    badge: "bg-emerald-100 text-emerald-700",
+    hover: "hover:border-emerald-400",
+    accent: "bg-emerald-50",
   },
 };
 
-export function ProductCard({ product, whatsappNumber, variant = "men" }: ProductCardProps) {
+export function ProductCard({ product, whatsappNumber, variant = "phones" }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   
   const colors = categoryColors[variant];
   
   const whatsappMessage = encodeURIComponent(
-    `Hi! I'm interested in ${product.name} - ${formatUsd(product.price)}. Sizes available: ${product.sizes.join(", ") || "N/A"}. Colors: ${product.colors.join(", ") || "N/A"}. Can you provide more details?`
+    `Hi! I'm interested in ${product.name} - ${formatZmw(product.price)}. Sizes available: ${product.sizes.join(", ") || "N/A"}. Colors: ${product.colors.join(", ") || "N/A"}. Can you provide more details?`
   );
   
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
@@ -74,7 +75,7 @@ export function ProductCard({ product, whatsappNumber, variant = "men" }: Produc
           />
         ) : (
           <div className={`flex h-full w-full items-center justify-center ${colors.accent}`}>
-            <span className="text-6xl opacity-50">👔</span>
+            <span className="text-6xl opacity-50">📱</span>
           </div>
         )}
 
@@ -129,7 +130,7 @@ export function ProductCard({ product, whatsappNumber, variant = "men" }: Produc
             </p>
           </div>
           <p className={`text-sm sm:text-lg font-bold whitespace-nowrap shrink-0 ${colors.text}`}>
-            {formatUsd(product.price)}
+            {formatZmw(product.price)}
           </p>
         </div>
 
@@ -147,16 +148,19 @@ export function ProductCard({ product, whatsappNumber, variant = "men" }: Produc
           )}
         </div>
 
-        {/* WhatsApp Button */}
-        <Button
-          className={`w-full mt-4 bg-green-600 hover:bg-green-700 text-white gap-2`}
-          asChild
-        >
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-            <MessageCircle className="h-4 w-4" />
-            Contact on WhatsApp
-          </a>
-        </Button>
+        {/* Add to Cart + WhatsApp */}
+        <div className="mt-4 flex flex-col gap-2">
+          <AddToCartDialog product={product} variant={variant} />
+          <Button
+            className="w-full bg-green-600 hover:bg-green-700 text-white gap-2"
+            asChild
+          >
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-4 w-4" />
+              Contact on WhatsApp
+            </a>
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );

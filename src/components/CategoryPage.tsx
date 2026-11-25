@@ -13,57 +13,57 @@ import type { Product } from "@/types/product";
 const WHATSAPP_NUMBER = "260968570833";
 
 interface CategoryPageProps {
-  category: "men" | "women" | "children";
+  category: "phones" | "tablets" | "computers";
   title: string;
   subtitle: string;
 }
 
 const categoryStyles = {
-  men: {
-    gradient: "from-slate-900 via-slate-800 to-slate-700",
-    bg: "bg-slate-50",
-    accent: "text-slate-900",
-    border: "border-slate-200",
-    heroImage: "/images/men-1.jpg",
-    heroOverlay: "from-slate-900/80 via-slate-900/50 to-slate-900/20",
+  phones: {
+    gradient: "from-blue-700 via-blue-600 to-indigo-600",
+    bg: "bg-blue-50",
+    accent: "text-blue-700",
+    border: "border-blue-200",
+    heroImage: "/images/electronics/phone-1.jpg",
+    heroOverlay: "from-blue-900/80 via-blue-900/50 to-blue-900/20",
     titleText: "text-white",
-    subtitleText: "text-slate-200",
+    subtitleText: "text-blue-100",
     badgeBorder: "border-white/30",
   },
-  women: {
-    gradient: "from-rose-400 via-pink-400 to-rose-300",
-    bg: "bg-rose-50/30",
-    accent: "text-rose-600",
-    border: "border-rose-100",
-    heroImage: "/images/woman-1.jpg",
-    heroOverlay: "from-rose-900/80 via-rose-900/50 to-rose-900/20",
+  tablets: {
+    gradient: "from-violet-600 via-purple-600 to-fuchsia-600",
+    bg: "bg-violet-50",
+    accent: "text-violet-700",
+    border: "border-violet-200",
+    heroImage: "/images/electronics/tablet-1.jpg",
+    heroOverlay: "from-violet-900/80 via-violet-900/50 to-violet-900/20",
     titleText: "text-white",
-    subtitleText: "text-rose-100",
+    subtitleText: "text-violet-100",
     badgeBorder: "border-white/30",
   },
-  children: {
-    gradient: "from-teal-500 via-cyan-400 to-teal-400",
-    bg: "bg-teal-50/30",
-    accent: "text-teal-600",
-    border: "border-teal-100",
-    heroImage: "/images/kids-1.jpg",
-    heroOverlay: "from-teal-900/80 via-teal-900/50 to-teal-900/20",
+  computers: {
+    gradient: "from-emerald-600 via-teal-600 to-cyan-600",
+    bg: "bg-emerald-50",
+    accent: "text-emerald-700",
+    border: "border-emerald-200",
+    heroImage: "/images/electronics/computer-1.jpg",
+    heroOverlay: "from-emerald-900/80 via-teal-900/50 to-teal-900/20",
     titleText: "text-white",
-    subtitleText: "text-teal-100",
+    subtitleText: "text-emerald-100",
     badgeBorder: "border-white/30",
   },
 };
 
 const categorySizes = {
-  men: ["XS", "S", "M", "L", "XL", "XXL"],
-  women: ["XS", "S", "M", "L", "XL", "XXL"],
-  children: ["2T", "3T", "4T", "5", "6", "7", "8", "10", "12"],
+  phones: ["128GB", "256GB", "512GB", "1TB"],
+  tablets: ["64GB", "128GB", "256GB", "512GB"],
+  computers: ["256GB", "512GB", "1TB", "2TB", "4TB"],
 };
 
 const categoryColors = {
-  men: ["Black", "Navy", "Gray", "White", "Charcoal", "Olive"],
-  women: ["Black", "White", "Rose", "Navy", "Beige", "Burgundy", "Sage"],
-  children: ["Blue", "Pink", "Yellow", "Green", "Orange", "Purple", "White"],
+  phones: ["Black", "Blue", "Green", "Purple", "Silver", "Pink", "Titanium"],
+  tablets: ["Silver", "Space Gray", "Blue", "Pink", "Beige", "Gold"],
+  computers: ["Silver", "Space Gray", "Midnight", "Starlight", "Black", "Blue"],
 };
 
 export function CategoryPage({ category, title, subtitle }: CategoryPageProps) {
@@ -233,7 +233,7 @@ export function CategoryPage({ category, title, subtitle }: CategoryPageProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Sizes */}
                   <div>
-                    <p className="text-sm font-medium mb-3">Sizes</p>
+                    <p className="text-sm font-medium mb-3">Storage</p>
                     <div className="flex flex-wrap gap-2">
                       {categorySizes[category].map((size) => (
                         <Badge
@@ -281,8 +281,8 @@ export function CategoryPage({ category, title, subtitle }: CategoryPageProps) {
                   </Badge>
                 )}
                 {selectedSizes.map((size) => (
-                  <Badge key={size} variant="secondary" className="gap-1">
-                    Size: {size}
+                    <Badge key={size} variant="secondary" className="gap-1">
+                    Storage: {size}
                     <X
                       className="h-3 w-3 cursor-pointer"
                       onClick={() => toggleSize(size)}

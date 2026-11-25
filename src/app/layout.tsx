@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/components/Providers";
+import { SplashScreen } from "@/components/SplashScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nyembo Designs - Fashion for Everyone",
-  description: "Discover quality fashion for men, women, and children at Nyembo Designs. Express yourself with our stylish clothing collection.",
-  keywords: ["Nyembo Designs", "Fashion", "Men Clothing", "Women Clothing", "Children Clothing", "Style", "Trending"],
-  authors: [{ name: "Nyembo Designs" }],
+  title: "TwendaChina - Electronics Store",
+  description: "Shop the latest electronics in Zambia at TwendaChina. Phones, tablets and computers from Apple, Samsung, Google and more — pay securely in Kwacha.",
+  keywords: ["TwendaChina", "Electronics", "Phones", "Tablets", "Computers", "Laptops", "Zambia", "Smartphones", "iPad"],
+  authors: [{ name: "TwendaChina" }],
   other: {
     "darkreader-lock": "",
   },
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
     icon: "/logo.png",
   },
   openGraph: {
-    title: "Nyembo Designs - Fashion for Everyone",
-    description: "Discover quality fashion for men, women, and children at Nyembo Designs.",
+    title: "TwendaChina - Electronics Store",
+    description: "Shop the latest phones, tablets and computers in Zambia. Pay securely in Kwacha.",
     type: "website",
   },
 };
@@ -44,6 +45,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <Providers>
+          <SplashScreen />
           {children}
           <Toaster />
         </Providers>

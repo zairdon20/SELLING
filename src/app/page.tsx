@@ -38,11 +38,11 @@ export default function Home() {
     fetchProducts();
   }, []);
 
-  const menProducts = products.filter((p) => p.category === "men");
-  const womenProducts = products.filter((p) => p.category === "women");
-  const childrenProducts = products.filter((p) => p.category === "children");
+  const phonesProducts = products.filter((p) => p.category === "phones");
+  const tabletsProducts = products.filter((p) => p.category === "tablets");
+  const computersProducts = products.filter((p) => p.category === "computers");
   const featuredProduct =
-    products.find((p) => p.id === "women-1") ||
+    products.find((p) => p.id === "phones-1") ||
     products.find((p) => p.featured) ||
     products[0] ||
     null;
@@ -52,7 +52,7 @@ export default function Home() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="h-12 w-12 animate-spin mx-auto text-neutral-900" />
-          <p className="mt-4 text-muted-foreground">Loading Nyembo Designs...</p>
+          <p className="mt-4 text-muted-foreground">Loading TwendaChina...</p>
         </div>
       </div>
     );
@@ -74,38 +74,38 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      
+
       <main className="flex-1">
         <HeroSection product={featuredProduct} whatsappNumber={WHATSAPP_NUMBER} />
-        
+
         <CategorySection
-          id="men"
-          title="Men"
-          subtitle="Discover our collection of stylish and comfortable men's clothing. From casual to formal, find the perfect fit for every occasion."
-          products={menProducts}
+          id="phones"
+          title="Phones"
+          subtitle="Flagship smartphones from Apple, Samsung, Google and more — the latest models with the best cameras and fastest chips."
+          products={phonesProducts}
           whatsappNumber={WHATSAPP_NUMBER}
-          variant="men"
+          variant="phones"
         />
-        
+
         <CategorySection
-          id="women"
-          title="Women"
-          subtitle="Explore our elegant women's collection featuring the latest trends in fashion. Quality pieces that express your unique style."
-          products={womenProducts}
+          id="tablets"
+          title="Tablets"
+          subtitle="iPads and Android tablets for work, study and play — stunning displays, all-day battery, and Apple Pencil or S Pen support."
+          products={tabletsProducts}
           whatsappNumber={WHATSAPP_NUMBER}
-          variant="women"
+          variant="tablets"
         />
-        
+
         <CategorySection
-          id="children"
-          title="Children"
-          subtitle="Fun, comfortable, and durable clothing for your little ones. Bright colors and playful designs they'll love to wear."
-          products={childrenProducts}
+          id="computers"
+          title="Computers"
+          subtitle="MacBooks, ultrabooks and gaming laptops powered by M-series, Intel and AMD — built for productivity, creativity and play."
+          products={computersProducts}
           whatsappNumber={WHATSAPP_NUMBER}
-          variant="children"
+          variant="computers"
         />
       </main>
-      
+
       <Footer whatsappNumber={WHATSAPP_NUMBER} />
     </div>
   );

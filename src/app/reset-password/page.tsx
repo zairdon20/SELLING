@@ -67,8 +67,8 @@ function ResetPasswordPageInner() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-neutral-100 flex flex-col items-center justify-center px-4 py-12">
       <Link href="/" className="flex items-center gap-2 mb-8 group">
-        <Image src="/logo.png" alt="Nyembo Designs" width={44} height={44} className="rounded-full" />
-        <span className="text-2xl font-bold tracking-tight text-neutral-900">Nyembo Designs</span>
+        <Image src="/logo.png" alt="TwendaChina" width={44} height={44} className="rounded-full" />
+        <span className="text-2xl font-bold tracking-tight text-neutral-900">TwendaChina</span>
       </Link>
 
       <Card className="w-full max-w-md shadow-xl border-neutral-200">

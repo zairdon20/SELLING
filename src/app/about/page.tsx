@@ -1,8 +1,8 @@
 import AboutPage from "@/components/AboutPage";
 
 export const metadata = {
-  title: "About Us | Nyembo Designs",
-  description: "Learn about Nyembo Designs - your destination for quality fashion for men, women, and children.",
+  title: "About Us | TwendaChina",
+  description: "Learn about TwendaChina - your destination for genuine phones, tablets and computers in Zambia.",
 };
 
 export default function Page() {

@@ -25,7 +25,7 @@ import {
   Clock3,
   CheckCircle2,
 } from "lucide-react";
-import { formatUsd } from "@/lib/currency";
+import { formatZmw } from "@/lib/currency";
 
 interface AccountOrder {
   id: string;
@@ -131,8 +131,8 @@ export default function AccountPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
         <div className="container mx-auto flex min-h-16 py-2 items-center justify-between gap-2 px-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="Nyembo Designs" width={36} height={36} className="rounded-full" />
-            <span className="text-lg font-bold tracking-tight">Nyembo Designs</span>
+            <Image src="/logo.png" alt="TwendaChina" width={36} height={36} className="rounded-full" />
+            <span className="text-lg font-bold tracking-tight">TwendaChina</span>
           </Link>
 
           <Button
@@ -248,7 +248,7 @@ export default function AccountPage() {
                       {new Date(order.createdAt).toLocaleString()}
                     </p>
                     <p className="text-sm text-muted-foreground">{summarizeItems(order.items)}</p>
-                    <p className="text-sm font-semibold">{formatUsd(order.totalAmount || 0)}</p>
+                    <p className="text-sm font-semibold">{formatZmw(order.totalAmount || 0)}</p>
                   </div>
                 ))
               )}

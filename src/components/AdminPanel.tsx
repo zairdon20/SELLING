@@ -37,7 +37,7 @@ import {
 } from "lucide-react";
 import type { Product } from "@/types/product";
 import { useToast } from "@/hooks/use-toast";
-import { formatUsd } from "@/lib/currency";
+import { formatZmw } from "@/lib/currency";
 
 interface AdminPanelProps {
   open: boolean;
@@ -62,7 +62,7 @@ export function AdminPanel({ open, onOpenChange, products, onRefresh }: AdminPan
     name: "",
     description: "",
     price: "",
-    category: "men",
+    category: "phones",
     imageUrl: "",
     sizes: [] as string[],
     colors: [] as string[],
@@ -74,7 +74,7 @@ export function AdminPanel({ open, onOpenChange, products, onRefresh }: AdminPan
       name: "",
       description: "",
       price: "",
-      category: "men",
+      category: "phones",
       imageUrl: "",
       sizes: [],
       colors: [],
@@ -331,9 +331,9 @@ export function AdminPanel({ open, onOpenChange, products, onRefresh }: AdminPan
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="men">Men</SelectItem>
-                    <SelectItem value="women">Women</SelectItem>
-                    <SelectItem value="children">Children</SelectItem>
+                    <SelectItem value="phones">Phones</SelectItem>
+                    <SelectItem value="tablets">Tablets</SelectItem>
+                    <SelectItem value="computers">Computers</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -475,7 +475,7 @@ export function AdminPanel({ open, onOpenChange, products, onRefresh }: AdminPan
                           <Badge variant="outline" className="text-xs">
                             {product.category}
                           </Badge>
-                          <span className="text-sm font-semibold whitespace-nowrap">{formatUsd(product.price)}</span>
+                          <span className="text-sm font-semibold whitespace-nowrap">{formatZmw(product.price)}</span>
                           {product.featured && (
                             <Badge className="text-xs bg-amber-500">Featured</Badge>
                           )}

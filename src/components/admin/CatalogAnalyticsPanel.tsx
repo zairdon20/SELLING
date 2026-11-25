@@ -17,16 +17,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, CheckCircle2, Star, TrendingUp } from "lucide-react";
 import type { Product } from "@/types/product";
-import { formatUsd } from "@/lib/currency";
+import { formatZmw } from "@/lib/currency";
 
 interface CatalogAnalyticsPanelProps {
   products: Product[];
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
-  men: "#1e293b",
-  women: "#f43f5e",
-  children: "#0d9488",
+  phones: "#1d4ed8",
+  tablets: "#7c3aed",
+  computers: "#0d9488",
 };
 
 const PRICE_RANGE_COLOR = "#6366f1";
@@ -43,7 +43,7 @@ export function CatalogAnalyticsPanel({ products }: CatalogAnalyticsPanelProps) 
   }
 
   // ── Category counts ──────────────────────────────────────────────────
-  const categories = ["men", "women", "children"] as const;
+  const categories = ["phones", "tablets", "computers"] as const;
   const categoryData = categories.map((cat) => ({
     name: cat.charAt(0).toUpperCase() + cat.slice(1),
     count: products.filter((p) => p.category === cat).length,
@@ -106,7 +106,7 @@ export function CatalogAnalyticsPanel({ products }: CatalogAnalyticsPanelProps) 
               <TrendingUp className="inline h-3 w-3 mr-1" />
               Avg Price
             </p>
-            <p className="text-3xl font-bold mt-1">{formatUsd(avgPrice)}</p>
+            <p className="text-3xl font-bold mt-1">{formatZmw(avgPrice)}</p>
           </CardContent>
         </Card>
         <Card>
@@ -163,8 +163,8 @@ export function CatalogAnalyticsPanel({ products }: CatalogAnalyticsPanelProps) 
               <BarChart data={avgPriceByCategory} margin={{ top: 4, right: 16, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-                <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => formatUsd(Number(v))} />
-                <Tooltip formatter={(value: number) => [formatUsd(Number(value)), "Avg price"]} />
+                <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => formatZmw(Number(v))} />
+                <Tooltip formatter={(value: number) => [formatZmw(Number(value)), "Avg price"]} />
                 <Bar dataKey="avgPrice" radius={[4, 4, 0, 0]}>
                   {avgPriceByCategory.map((entry) => (
                     <Cell

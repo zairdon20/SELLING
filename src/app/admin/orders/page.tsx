@@ -41,7 +41,7 @@ import {
   Plus,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { formatUsd } from "@/lib/currency";
+import { formatZmw } from "@/lib/currency";
 
 interface OrderRecord {
   id: string;
@@ -342,7 +342,7 @@ export default function AdminOrdersPage() {
           <Card>
             <CardContent className="pt-5">
               <p className="text-2xl font-bold">
-                {formatUsd(total)}
+                {formatZmw(total)}
               </p>
               <p className="text-xs text-muted-foreground">Total Revenue</p>
             </CardContent>
@@ -386,7 +386,7 @@ export default function AdminOrdersPage() {
                           </p>
                         </TableCell>
                         <TableCell className="text-sm font-medium">
-                          {order.totalAmount > 0 ? formatUsd(order.totalAmount) : "—"}
+                          {order.totalAmount > 0 ? formatZmw(order.totalAmount) : "—"}
                         </TableCell>
                         <TableCell>
                           <Select

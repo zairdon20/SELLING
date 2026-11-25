@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { isAdminSession } from '@/lib/auth';
 import type { Product } from '@/types/product';
+import { dummyProducts } from '@/lib/dummy-data';
 
 function toProduct(row: {
   id: string; name: string; description: string; price: number;
@@ -25,12 +26,30 @@ export async function GET(request: NextRequest) {
     const featured = searchParams.get('featured');
 
     const where: Record<string, unknown> = {};
-    if (category && ['men', 'women', 'children'].includes(category)) where.category = category;
+    if (category && ['phones', 'tablets', 'computers'].includes(category)) where.category = category;
     if (featured === 'true') where.featured = true;
 
-    const rows = await db.product.findMany({ where, orderBy: { createdAt: 'desc' } });
+    let products: Product[] = [];
+    let source = 'local';
+    try {
+      const rows = await db.product.findMany({ where, orderBy: { createdAt: 'desc' } });
+      products = rows.map(toProduct);
+    } catch {
+      // DB unavailable (fresh install / misconfigured) — fall through to dummy data.
+      products = [];
+    }
 
-    return NextResponse.json({ success: true, products: rows.map(toProduct), source: 'local' });
+    // Fallback to the dummy catalogue when the DB has nothing yet (e.g. before
+    // the admin seeds products), so the storefront is never empty.
+    if (products.length === 0) {
+      let dummy = [...dummyProducts];
+      if (category) dummy = dummy.filter((p) => p.category === category);
+      if (featured === 'true') dummy = dummy.filter((p) => p.featured);
+      products = dummy;
+      source = 'dummy';
+    }
+
+    return NextResponse.json({ success: true, products, source });
   } catch (error) {
     console.error('Error fetching products:', error);
     return NextResponse.json({ success: false, error: 'Failed to fetch products' }, { status: 500 });
